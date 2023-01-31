@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.tools{
+    display: flex;
+    position: absolute;
+    background-color: #ffcccc;
+    top:10px;
+    left:50%;
+    border: none;
+    border-radius: 10px;
+    transform: translate(-50% , 0);
+}
+
+.tools > div{
+   font-size: 30px;
+   padding: 10px 12px;
+}
+
