@@ -15,7 +15,7 @@ let eraserWidth = eraserWidthElem.value;
 
 
 let undoRedoTracker = []; //store canvas image urls
-let operations = 0; // Represent which action undo or redo
+let track = 0; // Represent which action undo or redo
 let mouseDown = false;
 
 
@@ -126,39 +126,32 @@ download.onclick = () =>{
     a.click(); 
 }
 
-
-// undo action
-
+// undo
 undo.addEventListener("click", (e) => {
-    if (operations > 0) operations--;
+    if (track > 0) track--;
     // track action
     let data = {
-        operations: operations,
-        arr : undoRedoTracker
+        trackValue: track,
+        undoRedoTracker
     }
-    changeAction(data);
+    undoRedoCanvas(data);
 })
-
-
-
-// redo action 
 redo.addEventListener("click", (e) => {
-    if (operations < undoRedoTracker.length-1) operations++;
+    if (track < undoRedoTracker.length-1) track++;
     // track action
     let data = {
-        operations: operations,
-        arr : undoRedoTracker
+        trackValue: track,
+        undoRedoTracker
     }
-    
-    changeAction(data);
+    undoRedoCanvas(data);
 })
 
 
-function changeAction(actionObj) {
-    operations = actionObj.operations;
-    undoRedoTracker = actionObj.arr;
+function undoRedoCanvas(trackObj) {
+    track = trackObj.trackValue;
+    undoRedoTracker = trackObj.undoRedoTracker;
 
-    let url = undoRedoTracker[operations];
+    let url = undoRedoTracker[track];
     let img = new Image(); // new image reference element
     img.src = url;
     img.onload = (e) => {
@@ -169,5 +162,5 @@ function changeAction(actionObj) {
 // resest clear all canvas
 
 reset.onclick = () =>{
-         
+     context.clearRect(0,0,canvas.width, canvas.height);    
 }
