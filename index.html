@@ -1,30 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://kit.fontawesome.com/cc0400ede0.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-
     <title>Sketch</title>
   </head>
-  <body>
+  <body >
     <div class="tools">
-      <div class="pencil"><i class="fa-solid fa-pencil"></i></div>
-      <div class="eraser"><i class="fa-regular fa-eraser"></i></div>
-      <div class="color"><i class="fa-regular fa-palette"></i></div>
-      <div class="text"><i class="fa-regular fa-text"></i></div>
-      <div class="download"><i class="fa-solid fa-download"></i></div>
-      <div class="undo"><i class="fa-solid fa-rotate-left"></i></div>
-      <div class="redo"><i class="fa-solid fa-rotate-right"></i></div>
-      <div class="reset"><i class="fa-light fa-trash"></i></div>
+      <img class="pencil" src="icons\icons8-pencil-drawing-48.png" alt="" />
+
+      <img class="eraser" src="icons\icons8-eraser-tool-48.png" alt="" />
+
+      <img class="color" src="icons\icons8-color-palette-48.png" alt="" />
+
+      <img class="text" src="icons\icons8-txt-48.png" alt="" />
+
+      <img class="download" src="icons\icons8-downloads-48.png" alt="" />
+
+      <img class="undo" src="icons\icons8-undo-50.png" alt="" />
+
+      <img class="redo" src="icons\icons8-up-right-50.png" alt="" />
+
+      <img class="reset" src="icons\icons8-available-updates-50.png" alt="" />
     </div>
-    <script src="script.js"></script>
-    <!-- <script src="https://kit.fontawesome.com/cc0400ede0.js" crossorigin="anonymous"></script> -->
+
+    <div class="pencil__tools show">
+      <!-- <label for=""> Pencil-size</label> -->
+      <input
+        type="range"
+        value="2"
+        min="2"
+        max="100"
+        oninput="this.nextElementSibling.value = this.value"
+      />
+      <output>2</output>
+    </div>
+
+    <div class="eraser__tools show">
+      <!-- <label for=""> Eraser-size</label> -->
+      <input
+        type="range"
+        value="2"
+        min="2"
+        max="100"
+        oninput="this.nextElementSibling.value = this.value"
+      />
+      <output>2</output>
+    </div>
+
+    <div class="color__pallete show">
+      <select>
+        <option >black</option>
+        <option >red</option>
+        <option >blue</option>
+        <option >green</option>
+        <option >purple</option>
+        <option >yellow</option>
+        <option >orange</option>
+        <option >white</option>
+        <option >pink</option>
+      </select>
+    </div>
+
+    
+
+
+    <script src="tools.js"></script>
   </body>
 </html>
