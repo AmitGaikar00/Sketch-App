@@ -11,7 +11,7 @@
     />
     <title>Sketch</title>
   </head>
-  <body >
+  <body>
     <div class="tools">
       <img class="pencil" src="icons\icons8-pencil-drawing-48.png" alt="" />
 
@@ -30,9 +30,10 @@
       <img class="reset" src="icons\icons8-available-updates-50.png" alt="" />
     </div>
 
-    <div class="pencil__tools show">
+    <div class="pencil__tools">
       <!-- <label for=""> Pencil-size</label> -->
       <input
+        class="pencil__width"
         type="range"
         value="2"
         min="2"
@@ -42,9 +43,10 @@
       <output>2</output>
     </div>
 
-    <div class="eraser__tools show">
+    <div class="eraser__tools">
       <!-- <label for=""> Eraser-size</label> -->
       <input
+        class="eraser__width"
         type="range"
         value="2"
         min="2"
@@ -54,23 +56,15 @@
       <output>2</output>
     </div>
 
-    <div class="color__pallete show">
-      <select>
-        <option >black</option>
-        <option >red</option>
-        <option >blue</option>
-        <option >green</option>
-        <option >purple</option>
-        <option >yellow</option>
-        <option >orange</option>
-        <option >white</option>
-        <option >pink</option>
-      </select>
+    <div class="color__pallete">
+      <div class="black colors"></div>
+      <div class="red colors"></div>
+      <div class="blue colors"></div>
     </div>
 
-    
-
+    <canvas></canvas>
 
     <script src="tools.js"></script>
+    <script src="canvas.js"></script>
   </body>
 </html>

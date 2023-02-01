@@ -53,6 +53,7 @@ body{
     padding:5px;
     border-radius: 5px;
     border: lightgrey 2px solid;
+    display: none;
 }
 .pencil__tools{
     left:30%;
@@ -63,12 +64,28 @@ body{
 
 }
 .color__pallete{
-    width:154px;
-    left: 40%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    left: 40%;;
 }
-.color__pallete select{
-    width: 100%;
+.color__pallete > div {
+    width: 1.7rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
 }
+.black {
+    background-color: black;
+}
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+
 
 .show{
     visibility: hidden;
